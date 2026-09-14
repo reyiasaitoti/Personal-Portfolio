@@ -58,6 +58,12 @@ h1 em, h2 em, h3 em { color: var(--accent); font-family: var(--serif); font-weig
 .marquee-track { width: max-content; display: flex; align-items: center; gap: 26px; animation: ticker 24s linear infinite; font: 500 11px var(--mono); letter-spacing: .14em; }
 .marquee-track b { font-size: 15px; font-weight: 400; }
 @keyframes ticker { to { transform: translateX(-50%); } }
+.proof-strip { display: grid; grid-template-columns: repeat(4, 1fr); border-bottom: 1px solid var(--line); }
+.proof-strip div { display: flex; align-items: baseline; gap: 12px; padding: 25px 18px 25px 0; border-right: 1px solid var(--line); }
+.proof-strip div + div { padding-left: 24px; }
+.proof-strip div:last-child { border-right: 0; }
+.proof-strip strong { color: var(--accent); font-size: 30px; letter-spacing: -.06em; }
+.proof-strip span { color: var(--muted); font: 10px var(--mono); letter-spacing: .06em; text-transform: uppercase; }
 .section-label { display: flex; align-items: center; gap: 18px; font: 10px var(--mono); letter-spacing: .12em; text-transform: uppercase; }
 .section-label span:first-child { color: var(--accent); }
 .about-content { display: grid; grid-template-columns: 1.15fr .85fr; gap: 10%; margin-top: 76px; }
@@ -96,6 +102,17 @@ cite { font: 10px var(--mono); color: var(--muted); letter-spacing: .08em; text-
 .principles-note strong { font-size: 20px; line-height: 1.25; letter-spacing: -.04em; }
 .mini-rule { display: block; height: 1px; width: 48px; background: var(--accent); }
 .principles-note p { color: var(--muted); font-size: 13px; }
+.github-section { display: grid; grid-template-columns: 1fr 1fr; gap: 14%; border-top: 1px solid var(--line); }
+.github-copy h2 { margin: 50px 0 24px; }
+.github-copy p { max-width: 455px; color: var(--muted); }
+.github-copy .button { margin-top: 18px; }
+.github-details { padding-top: 50px; }
+.github-stat { display: flex; align-items: baseline; gap: 16px; padding: 20px 0; border-bottom: 1px solid var(--line); }
+.github-stat strong { font-size: 42px; letter-spacing: -.06em; }
+.github-stat span, .github-repos > span { color: var(--muted); font: 10px var(--mono); letter-spacing: .1em; text-transform: uppercase; }
+.github-repos { display: flex; flex-direction: column; gap: 12px; padding-top: 34px; }
+.github-repos a { width: fit-content; font-size: 14px; font-weight: 700; border-bottom: 1px solid var(--line); padding-bottom: 3px; }
+.github-repos a:hover { color: var(--accent); border-color: var(--accent); }
 .contact { min-height: 580px; display: flex; align-items: center; justify-content: space-between; background: var(--dark); color: var(--paper); position: relative; overflow: hidden; }
 .contact::before { content: ''; position: absolute; width: 500px; height: 500px; border: 1px solid rgba(186,213,198,.22); border-radius: 50%; right: -110px; top: 50%; transform: translateY(-50%); }
 .contact-inner { position: relative; z-index: 1; }
@@ -128,6 +145,11 @@ cite { font: 10px var(--mono); color: var(--muted); letter-spacing: .08em; text-
   .profile-card { width: 285px; }
   .orbit-one { width: 280px; } .orbit-two { width: 180px; height: 320px; }
   .section-pad { padding: 90px 0; }
+  .proof-strip { grid-template-columns: repeat(2, 1fr); }
+  .proof-strip div:nth-child(2) { border-right: 0; }
+  .proof-strip div:nth-child(3), .proof-strip div:nth-child(4) { border-top: 1px solid var(--line); }
+  .proof-strip div:nth-child(3) { padding-left: 0; }
+  .proof-strip div:nth-child(4) { padding-left: 24px; }
   .about-content, .principles { display: block; margin-top: 56px; }
   .about-text { margin-top: 45px; }
   .expertise-grid { display: block; margin-top: 48px; }
@@ -141,6 +163,9 @@ cite { font: 10px var(--mono); color: var(--muted); letter-spacing: .08em; text-
   .project-row h3 { font-size: 25px; }
   .project-row p { font-size: 12px; }
   .principles-note { margin-top: 60px; }
+  .github-section { display: block; }
+  .github-copy h2 { margin-top: 48px; }
+  .github-details { padding-top: 60px; }
   .contact { min-height: 580px; padding-top: 90px; padding-bottom: 90px; }
   .contact::before { width: 300px; height: 300px; right: 0; }
   .contact-orbit { position: absolute; right: 20px; bottom: 20px; width: 180px; height: 180px; opacity: .6; }
